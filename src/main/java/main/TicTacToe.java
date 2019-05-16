@@ -5,21 +5,39 @@ import java.util.*;
 public class TicTacToe{
 public static int[][] ticbox;
 	public static int win(int [][]tic) {
-		//check all rows
-		//loop through rows from 0 to 3 and check if all the 3 places have same marks
- 		
+		if(tic[0][0] == tic[0][1] && tic[0][1] == tic[0][2] && tic[0][0] == 1)
+			return 1;
+		else if(tic[1][0] == tic[1][1] && tic[1][1] == tic[1][2] && tic[1][0]==1)
+			return 1;
+		else if(tic[2][0] == tic[2][1] && tic[2][1] == tic[2][2] && tic[2][0]==1)
+			return 1;
+		else if(tic[0][0] == tic[1][0] && tic[1][0] == tic[2][0] && tic[0][0]==1)
+			return 1;
+		else if(tic[0][1] == tic[1][1] && tic[1][1] == tic[2][1] && tic[0][1]==1)
+			return 1;
+		else if(tic[0][2] == tic[1][2] && tic[1][2] == tic[2][2] && tic[0][2]==1)
+			return 1;
+		else if(tic[0][0] == tic[1][1] && tic[1][1] == tic[2][2] && tic[0][0]==1)
+			return 1;
+		else if(tic[2][0] == tic[1][1] && tic[1][1] == tic[2][0] && tic[2][0]==1)
+			return 1;
 		
-		//check all cols
-		//loop through columns from 0 to 3 and check if all the 3 places have same marks
- 		
-		//check both diagonals 
-		
-		
-		
-		//write your code here !!!
-		
-		
-		
+		if(tic[0][0] == tic[0][1] && tic[0][1] == tic[0][2] && tic[0][0] == 2)
+			return 2;
+		else if(tic[1][0] == tic[1][1] && tic[1][1] == tic[1][2] && tic[1][0]==2)
+			return 2;
+		else if(tic[2][0] == tic[2][1] && tic[2][1] == tic[2][2] && tic[2][0]==2)
+			return 2;
+		else if(tic[0][0] == tic[1][0] && tic[1][0] == tic[2][0] && tic[0][0]==2)
+			return 2;
+		else if(tic[0][1] == tic[1][1] && tic[1][1] == tic[2][1] && tic[0][1]==2)
+			return 2;
+		else if(tic[0][2] == tic[1][2] && tic[1][2] == tic[2][2] && tic[0][2]==2)
+			return 2;
+		else if(tic[0][0] == tic[1][1] && tic[1][1] == tic[2][2] && tic[0][0]==2)
+			return 2;
+		else if(tic[2][0] == tic[1][1] && tic[1][1] == tic[2][0] && tic[2][0]==2)
+			return 2;
 		return 0;
 		
 	}
@@ -33,7 +51,10 @@ public static int[][] ticbox;
 		}
 	}
 	public static boolean validate(int a1,int a2,int [][] tic) {
-		//check if a1 is between 0 & 3
+		if(a1>=0 && a1<3)
+			if(a2>=0 && a2<3)
+				if(tic[a1][a2]==0)
+					return true;
 		//check if a2 is between 0 & 3
 		//check if the selected box is empty ie, already not marked by other player
 		//if all checks passed return true.
